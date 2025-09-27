@@ -2,49 +2,15 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>寻宝游戏</title>
-  <style>
-    body {
-      font-family: "Microsoft YaHei", sans-serif;
-      background: linear-gradient(135deg, #2c3e50, #3498db);
-      color: #fff;
-      text-align: center;
-      padding: 50px;
-    }
-    .log {
-      margin: 10px auto;
-      padding: 10px;
-      width: 80%;
-      background: rgba(0,0,0,0.5);
-      border-radius: 10px;
-      font-size: 18px;
-      animation: fadeIn 1s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  <title>寻宝大冒险</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🏝️ 寻宝探险</h1>
-  <div id="story"></div>
-
-  <script type="module">
-    import { findTreasure } from './treasure_async.js';
-
-    function addLog(text) {
-      const story = document.getElementById("story");
-      const div = document.createElement("div");
-      div.className = "log";
-      div.innerText = text;
-      story.appendChild(div);
-    }
-
-    console.log = addLog;
-    console.error = addLog;
-
-    findTreasure();
-  </script>
+  <div id="game-container">
+    <h1>⚔️ 寻宝大冒险 ⚔️</h1>
+    <div id="story"></div>
+    <div id="hint">按方向键 / WASD 继续冒险...</div>
+  </div>
+  <script type="module" src="game.js"></script>
 </body>
 </html>
